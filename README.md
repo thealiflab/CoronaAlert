@@ -1,4 +1,4 @@
-# coronaalert
+# Corona Alert
 
 Corona Virus Awareness App
 
