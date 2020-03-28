@@ -31,7 +31,7 @@ class MenuScreen extends StatelessWidget {
                     MenuCard(
                       title: 'Virtual Test',
                       image: Image.asset(
-                        'assets/images/test.png',
+                        'assets/images/vtest.png',
                         height: 80,
                         fit: BoxFit.contain,
                       ),
