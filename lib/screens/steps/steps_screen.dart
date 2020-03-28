@@ -4,6 +4,7 @@ import 'package:fancy_on_boarding/fancy_on_boarding.dart';
 import 'widgets/step_title.dart';
 import 'widgets/step_description.dart';
 import '../menu/menu_screen.dart';
+import 'package:flutter/services.dart';
 
 class StepsScreen extends StatelessWidget {
   static const id = '/steps_screen';
@@ -90,6 +91,10 @@ class StepsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     return Scaffold(
       body: FancyOnBoarding(
         showSkipButton: true,

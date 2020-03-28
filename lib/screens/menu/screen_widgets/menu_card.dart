@@ -12,7 +12,7 @@ class MenuCard extends StatelessWidget {
     return Material(
       child: InkWell(
         onTap: onPressed,
-        splashColor: Colors.grey[400],
+        splashColor: Colors.grey[600],
         child: Card(
           margin: EdgeInsets.all(10.0),
           elevation: 8.0,

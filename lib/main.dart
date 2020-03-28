@@ -1,4 +1,6 @@
 import 'package:coronaalert/screens/menu/menu_screen.dart';
+import 'package:coronaalert/screens/menu/pages/contact/contact_page.dart';
+import 'package:coronaalert/screens/menu/pages/vtest/vtest_page.dart';
 import 'package:flutter/material.dart';
 import 'screens/steps/steps_screen.dart';
 
@@ -18,6 +20,8 @@ class MyApp extends StatelessWidget {
       routes: {
         StepsScreen.id: (context) => StepsScreen(),
         MenuScreen.id: (context) => MenuScreen(),
+        ContactPage.id: (context) => ContactPage(),
+        VirtualTest.id: (context) => VirtualTest(),
       },
     );
   }

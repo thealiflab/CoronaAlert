@@ -1,10 +1,15 @@
+import 'package:coronaalert/screens/menu/pages/vtest/vtest_page.dart';
 import 'package:coronaalert/screens/steps/steps_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'widgets/menu_header.dart';
-import 'widgets/menu_card.dart';
+import 'screen_widgets/menu_header.dart';
+import 'screen_widgets/menu_card.dart';
 import 'package:url_launcher/url_launcher.dart';
-
-const kMyWebSiteURL = 'https://ahmedalif.com';
+import 'pages/contact/contact_page.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
+import 'pages/news/news_link.dart';
+import 'pages/vtest/vtest_page.dart';
+import 'package:coronaalert/constants.dart';
 
 class MenuScreen extends StatelessWidget {
   static const id = 'menu_screen';
@@ -31,7 +36,7 @@ class MenuScreen extends StatelessWidget {
                         fit: BoxFit.contain,
                       ),
                       onPressed: () {
-                        Navigator.of(context).pushNamed(StepsScreen.id);
+                        Navigator.of(context).pushNamed(VirtualTest.id);
                       },
                     ),
                     MenuCard(
@@ -46,16 +51,51 @@ class MenuScreen extends StatelessWidget {
                       },
                     ),
                     MenuCard(
-                      title: 'News',
-                      image: Image.asset(
-                        'assets/images/news.png',
-                        height: 80,
-                        fit: BoxFit.contain,
-                      ),
-                      onPressed: () {
-                        Navigator.of(context).pushNamed(StepsScreen.id);
-                      },
-                    ),
+                        title: 'News',
+                        image: Image.asset(
+                          'assets/images/news.png',
+                          height: 80,
+                          fit: BoxFit.contain,
+                        ),
+                        onPressed: () {
+                          Alert(
+                            context: context,
+                            type: AlertType.none,
+                            title: '',
+                            content: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                NewsLink(
+                                  newsImageURL: 'assets/images/bbc.png',
+                                  newsPortalName: 'BBC',
+                                  urlRedirect: kBBCLink,
+                                ),
+                                NewsLink(
+                                  newsImageURL: 'assets/images/cnn.png',
+                                  newsPortalName: 'CNN',
+                                  urlRedirect: kCNNlink,
+                                ),
+                                NewsLink(
+                                  newsImageURL: 'assets/images/guardian.png',
+                                  newsPortalName: 'Guardian',
+                                  urlRedirect: kGuardianLink,
+                                ),
+                                NewsLink(
+                                  newsImageURL: 'assets/images/prothomalo.png',
+                                  newsPortalName: 'Prothom-Alo',
+                                  urlRedirect: kProthomAloLink,
+                                ),
+                                NewsLink(
+                                  newsImageURL: 'assets/images/dailystar.png',
+                                  newsPortalName: 'The Daily Star',
+                                  urlRedirect: kDSLink,
+                                ),
+                              ],
+                            ),
+                            closeFunction: () {},
+                          ).show();
+                        }),
                     MenuCard(
                       title: 'Statistics',
                       image: Image.asset(
@@ -75,7 +115,7 @@ class MenuScreen extends StatelessWidget {
                         fit: BoxFit.contain,
                       ),
                       onPressed: () {
-                        Navigator.of(context).pushNamed(StepsScreen.id);
+                        Navigator.of(context).pushNamed(ContactPage.id);
                       },
                     ),
                     MenuCard(
@@ -85,8 +125,12 @@ class MenuScreen extends StatelessWidget {
                         height: 80,
                         fit: BoxFit.contain,
                       ),
-                      onPressed: () {
-                        Navigator.of(context).pushNamed(StepsScreen.id);
+                      onPressed: () async {
+                        if (await canLaunch(kBkashDonateLink)) {
+                          await launch(kBkashDonateLink);
+                        } else {
+                          throw "Couldn't Launch $kBkashDonateLink";
+                        }
                       },
                     ),
                   ],
@@ -107,7 +151,7 @@ class MenuScreen extends StatelessWidget {
                   if (await canLaunch(kMyWebSiteURL)) {
                     await launch(kMyWebSiteURL);
                   } else {
-                    throw 'Could not launch $kMyWebSiteURL';
+                    throw 'Could not Launch $kMyWebSiteURL';
                   }
                 },
               ),
@@ -121,3 +165,11 @@ class MenuScreen extends StatelessWidget {
     );
   }
 }
+
+//() async {
+//if (await canLaunch(kNewsLink)) {
+//await launch(kNewsLink);
+//} else {
+//throw 'Could not launch $kNewsLink';
+//}
+//},
