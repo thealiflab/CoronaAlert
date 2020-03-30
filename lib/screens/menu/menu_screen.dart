@@ -1,3 +1,4 @@
+import 'package:coronaalert/screens/menu/pages/statistics/statistics_page.dart';
 import 'package:coronaalert/screens/menu/pages/vtest/vtest_page.dart';
 import 'package:coronaalert/screens/steps/steps_screen.dart';
 import 'package:flutter/cupertino.dart';
@@ -104,7 +105,7 @@ class MenuScreen extends StatelessWidget {
                         fit: BoxFit.contain,
                       ),
                       onPressed: () {
-                        Navigator.of(context).pushNamed(StepsScreen.id);
+                        Navigator.of(context).pushNamed(StatisticsPage.id);
                       },
                     ),
                     MenuCard(

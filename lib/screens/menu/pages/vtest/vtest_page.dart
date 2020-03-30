@@ -71,6 +71,7 @@ class _VirtualTestState extends State<VirtualTest> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Virtual Test'),
+        centerTitle: true,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -105,7 +106,7 @@ class _VirtualTestState extends State<VirtualTest> {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontStyle: FontStyle.italic,
-                  fontSize: 30.0,
+                  fontSize: 28.0,
                   fontWeight: FontWeight.w500,
                   color: Colors.black,
                 ),

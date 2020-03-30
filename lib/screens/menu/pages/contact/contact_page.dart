@@ -56,28 +56,48 @@ class ContactPage extends StatelessWidget {
                   phoneNumber: '999',
                 ),
                 ContactCard(
-                  title: 'Me',
-                  phoneNumber: '01790140470',
+                  title: 'IEDCR -1',
+                  phoneNumber: '01550064901',
                 ),
                 ContactCard(
-                  title: 'Me',
-                  phoneNumber: '01790140470',
+                  title: 'IEDCR - 2',
+                  phoneNumber: '01550064905',
                 ),
                 ContactCard(
-                  title: 'Me',
-                  phoneNumber: '01790140470',
+                  title: 'IEDCR - 3',
+                  phoneNumber: '01401184551',
                 ),
                 ContactCard(
-                  title: 'Me',
-                  phoneNumber: '01790140470',
+                  title: 'IEDCR - 4',
+                  phoneNumber: '01401184554',
                 ),
                 ContactCard(
-                  title: 'Me',
-                  phoneNumber: '01790140470',
+                  title: 'IEDCR - 5',
+                  phoneNumber: '01401184559',
                 ),
                 ContactCard(
-                  title: 'Me',
-                  phoneNumber: '01790140470',
+                  title: 'IEDCR - 6',
+                  phoneNumber: '01401184560',
+                ),
+                ContactCard(
+                  title: 'IEDCR - 7',
+                  phoneNumber: '01401184563',
+                ),
+                ContactCard(
+                  title: 'IEDCR - 8',
+                  phoneNumber: '01401184568',
+                ),
+                ContactCard(
+                  title: 'IEDCR - 9',
+                  phoneNumber: '01927711784',
+                ),
+                ContactCard(
+                  title: 'IEDCR - 10',
+                  phoneNumber: '01937000011',
+                ),
+                ContactCard(
+                  title: 'IEDCR - 11',
+                  phoneNumber: '01937110011',
                 ),
               ],
             ),
