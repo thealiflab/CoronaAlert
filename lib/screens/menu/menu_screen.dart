@@ -139,6 +139,7 @@ class MenuScreen extends StatelessWidget {
               ),
             ),
             Container(
+              color: Colors.transparent,
               child: InkWell(
                 child: Text(
                   'Developed by Alif',

@@ -4,9 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:coronaalert/constants.dart';
 
-class CountriesPage extends StatelessWidget {
+class CountriesPage extends StatefulWidget {
   static const id = '/countries_page';
 
+  @override
+  _CountriesPageState createState() => _CountriesPageState();
+}
+
+class _CountriesPageState extends State<CountriesPage> {
   Future<List<dynamic>> fetchCountries() async {
     var result = await http.get(apiURL + "countries");
     return json.decode((result.body));
@@ -30,6 +35,12 @@ class CountriesPage extends StatelessWidget {
 
   String _location(Map<dynamic, dynamic> user) {
     return user['country'] + "\n";
+  }
+
+  @override
+  void initState() {
+    fetchCountries();
+    super.initState();
   }
 
   @override

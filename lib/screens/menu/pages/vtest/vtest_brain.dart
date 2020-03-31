@@ -17,7 +17,7 @@ class VTestBrain {
     Questions('Do you have any nearby physical contact with COVID-19 patient?',
         4, 'physical'),
     Questions(
-        'Have you visited Corona infected area recently?', 4, 'infectedarea'),
+        'Have you visited Corona infected area recently?', 4, 'statecoronamap'),
   ];
 
   void nextQuestion() {

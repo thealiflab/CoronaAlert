@@ -80,11 +80,14 @@ class _VirtualTestState extends State<VirtualTest> {
           SizedBox(
             height: 10.0,
           ),
-          Image.asset(
-            'assets/images/' + vTestBrain.getQuestionImagePath() + '.png',
-            height: 250,
-            fit: BoxFit.contain,
-            //MediaQuery.of(context).size.width / 2
+          Expanded(
+            child: Image.asset(
+              'assets/images/' + vTestBrain.getQuestionImagePath() + '.png',
+              height: 250,
+              width: 250,
+              fit: BoxFit.contain,
+              //MediaQuery.of(context).size.width / 2
+            ),
           ),
           SizedBox(
             height: 10,
@@ -98,22 +101,22 @@ class _VirtualTestState extends State<VirtualTest> {
                   color: Colors.redAccent),
             ),
           ),
-          Expanded(
+          Container(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+              padding: EdgeInsets.all(35),
               child: Text(
                 vTestBrain.getQuestionText(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontStyle: FontStyle.italic,
-                  fontSize: 28.0,
+                  fontSize: 27.0,
                   fontWeight: FontWeight.w500,
                   color: Colors.black,
                 ),
               ),
             ),
           ),
-          Expanded(
+          Container(
             child: Padding(
               padding: EdgeInsets.only(
                 top: 60,
@@ -122,6 +125,7 @@ class _VirtualTestState extends State<VirtualTest> {
                 bottom: 0,
               ),
               child: FlatButton(
+                padding: EdgeInsets.all(22),
                 splashColor: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(
@@ -147,7 +151,7 @@ class _VirtualTestState extends State<VirtualTest> {
           SizedBox(
             height: 20.0,
           ),
-          Expanded(
+          Container(
             child: Padding(
               padding: EdgeInsets.only(
                 top: 0,
@@ -156,6 +160,7 @@ class _VirtualTestState extends State<VirtualTest> {
                 bottom: 60,
               ),
               child: FlatButton(
+                padding: EdgeInsets.all(22),
                 splashColor: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(

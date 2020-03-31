@@ -25,7 +25,7 @@ class StateCard extends StatelessWidget {
             ),
           ),
           child: Padding(
-            padding: EdgeInsets.all(17.0),
+            padding: EdgeInsets.all(13.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[

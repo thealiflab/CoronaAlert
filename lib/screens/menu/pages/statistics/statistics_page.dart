@@ -65,8 +65,8 @@ class _StatisticsPageState extends State<StatisticsPage> {
   void initState() {
     getData();
     getCountriesData();
-    Timer.periodic(Duration(hours: 3), (Timer t) => getCountriesData());
-    Timer.periodic(Duration(hours: 3), (Timer t) => getData());
+//    Timer.periodic(Duration(hours: 3), (Timer t) => getCountriesData());
+//    Timer.periodic(Duration(hours: 3), (Timer t) => getData());
     super.initState();
   }
 
@@ -91,7 +91,7 @@ class _StatisticsPageState extends State<StatisticsPage> {
                       StateCard(
                           stateCardIcon: Icon(
                             FontAwesomeIcons.globeAmericas,
-                            size: 32.0,
+                            size: 30.0,
                             color: Colors.blueAccent,
                           ),
                           textNumber: totalCases.toString(),
@@ -102,7 +102,7 @@ class _StatisticsPageState extends State<StatisticsPage> {
                       StateCard(
                           stateCardIcon: Icon(
                             FontAwesomeIcons.flagCheckered,
-                            size: 32.0,
+                            size: 30.0,
                             color: Colors.orangeAccent,
                           ),
                           textNumber: active.toString(),
@@ -118,7 +118,7 @@ class _StatisticsPageState extends State<StatisticsPage> {
                       StateCard(
                         stateCardIcon: Icon(
                           FontAwesomeIcons.skullCrossbones,
-                          size: 32.0,
+                          size: 30.0,
                           color: Colors.redAccent,
                         ),
                         textNumber: deaths.toString(),
@@ -130,7 +130,7 @@ class _StatisticsPageState extends State<StatisticsPage> {
                       StateCard(
                         stateCardIcon: Icon(
                           FontAwesomeIcons.solidCheckCircle,
-                          size: 32.0,
+                          size: 30.0,
                           color: Colors.green,
                         ),
                         textNumber: recovered.toString(),
@@ -159,18 +159,20 @@ class _StatisticsPageState extends State<StatisticsPage> {
                             fontWeight: FontWeight.w900,
                           ),
                         ),
-                        InkWell(
-                          onTap: () {
-                            Navigator.of(context).pushNamed(CountriesPage.id);
-                          },
-                          child: Container(
-                            child: Image.asset(
-                              'assets/images/statecoronamap.png',
-                              height: 300.0,
-                              fit: BoxFit.contain,
+                        Center(
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.of(context).pushNamed(CountriesPage.id);
+                            },
+                            child: Container(
+                              child: Image.asset(
+                                'assets/images/statecoronamap.png',
+                                height: 250.0,
+                                fit: BoxFit.contain,
+                              ),
                             ),
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
