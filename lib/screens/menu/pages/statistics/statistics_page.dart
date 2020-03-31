@@ -169,6 +169,9 @@ class _StatisticsPageState extends State<StatisticsPage> {
                             fontWeight: FontWeight.w900,
                           ),
                         ),
+                        SizedBox(
+                          height: 20,
+                        ),
                         Center(
                           child: InkWell(
                             onTap: () {
@@ -177,7 +180,7 @@ class _StatisticsPageState extends State<StatisticsPage> {
                             child: Container(
                               child: Image.asset(
                                 'assets/images/statecoronamap.png',
-                                height: 180.0,
+                                height: 190.0,
                                 fit: BoxFit.contain,
                               ),
                             ),
