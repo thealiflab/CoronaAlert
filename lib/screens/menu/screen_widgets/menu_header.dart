@@ -5,7 +5,7 @@ class MenuHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 100,
+      height: 80,
       color: Colors.transparent,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
@@ -13,7 +13,8 @@ class MenuHeader extends StatelessWidget {
           Text(
             'Corona Alert',
             style: TextStyle(
-              fontSize: 32.0,
+              fontSize: 30.0,
+              letterSpacing: 3,
               fontWeight: FontWeight.bold,
               color: Colors.redAccent,
             ),

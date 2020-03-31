@@ -25,7 +25,7 @@ class _VirtualTestState extends State<VirtualTest> {
         Alert(
           context: context,
           type: AlertType.info,
-          title: "Your Result",
+          title: "Your Result \"Probably\"",
           desc: vTestBrain.vTestResult(questionValueKeeper),
           closeFunction: () {
             questionValueKeeper = 0;
@@ -78,16 +78,14 @@ class _VirtualTestState extends State<VirtualTest> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           SizedBox(
-            height: 10.0,
+            height: 12.0,
           ),
-          Expanded(
-            child: Image.asset(
-              'assets/images/' + vTestBrain.getQuestionImagePath() + '.png',
-              height: 250,
-              width: 250,
-              fit: BoxFit.contain,
-              //MediaQuery.of(context).size.width / 2
-            ),
+          Image.asset(
+            'assets/images/' + vTestBrain.getQuestionImagePath() + '.png',
+            height: 150,
+            width: 150,
+            fit: BoxFit.contain,
+            //MediaQuery.of(context).size.width / 2
           ),
           SizedBox(
             height: 10,
@@ -101,17 +99,19 @@ class _VirtualTestState extends State<VirtualTest> {
                   color: Colors.redAccent),
             ),
           ),
-          Container(
-            child: Padding(
-              padding: EdgeInsets.all(35),
-              child: Text(
-                vTestBrain.getQuestionText(),
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontStyle: FontStyle.italic,
-                  fontSize: 27.0,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.black,
+          Expanded(
+            child: Container(
+              child: Padding(
+                padding: EdgeInsets.all(35),
+                child: Text(
+                  vTestBrain.getQuestionText(),
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontStyle: FontStyle.italic,
+                    fontSize: 27.0,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black,
+                  ),
                 ),
               ),
             ),
@@ -119,13 +119,13 @@ class _VirtualTestState extends State<VirtualTest> {
           Container(
             child: Padding(
               padding: EdgeInsets.only(
-                top: 60,
+                top: 0,
                 left: 60,
                 right: 60,
                 bottom: 0,
               ),
               child: FlatButton(
-                padding: EdgeInsets.all(22),
+                padding: EdgeInsets.all(18),
                 splashColor: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(
@@ -149,7 +149,7 @@ class _VirtualTestState extends State<VirtualTest> {
             ),
           ),
           SizedBox(
-            height: 20.0,
+            height: 15.0,
           ),
           Container(
             child: Padding(
@@ -157,10 +157,10 @@ class _VirtualTestState extends State<VirtualTest> {
                 top: 0,
                 left: 60,
                 right: 60,
-                bottom: 60,
+                bottom: 30,
               ),
               child: FlatButton(
-                padding: EdgeInsets.all(22),
+                padding: EdgeInsets.all(18),
                 splashColor: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(

@@ -1,5 +1,7 @@
 import 'package:coronaalert/screens/menu/pages/contact/contact_card.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:coronaalert/constants.dart';
 
 class ContactPage extends StatelessWidget {
   static const id = '/contact_page';
@@ -50,6 +52,7 @@ class ContactPage extends StatelessWidget {
           ),
           Expanded(
             child: ListView(
+              padding: EdgeInsets.only(top: 20, bottom: 20),
               children: <Widget>[
                 ContactCard(
                   title: 'Emergency',
@@ -98,6 +101,9 @@ class ContactPage extends StatelessWidget {
                 ContactCard(
                   title: 'IEDCR - 11',
                   phoneNumber: '01937110011',
+                ),
+                SizedBox(
+                  height: 15,
                 ),
               ],
             ),

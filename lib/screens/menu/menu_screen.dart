@@ -25,15 +25,16 @@ class MenuScreen extends StatelessWidget {
             MenuHeader(),
             Expanded(
               child: Padding(
-                padding: EdgeInsets.all(20),
+                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 0),
                 child: GridView.count(
                   crossAxisCount: 2,
+                  physics: NeverScrollableScrollPhysics(),
                   children: <Widget>[
                     MenuCard(
                       title: 'Virtual Test',
                       image: Image.asset(
                         'assets/images/vtest.png',
-                        height: 80,
+//                        height: 80,
                         fit: BoxFit.contain,
                       ),
                       onPressed: () {
@@ -44,7 +45,7 @@ class MenuScreen extends StatelessWidget {
                       title: 'Rules',
                       image: Image.asset(
                         'assets/images/rules.png',
-                        height: 80,
+//                        height: 80,
                         fit: BoxFit.contain,
                       ),
                       onPressed: () {
@@ -55,7 +56,7 @@ class MenuScreen extends StatelessWidget {
                         title: 'News',
                         image: Image.asset(
                           'assets/images/news.png',
-                          height: 80,
+//                          height: 80,
                           fit: BoxFit.contain,
                         ),
                         onPressed: () {
@@ -101,7 +102,7 @@ class MenuScreen extends StatelessWidget {
                       title: 'Statistics',
                       image: Image.asset(
                         'assets/images/statistics.png',
-                        height: 80,
+//                        height: 50,
                         fit: BoxFit.contain,
                       ),
                       onPressed: () {
@@ -112,7 +113,7 @@ class MenuScreen extends StatelessWidget {
                       title: 'Contact',
                       image: Image.asset(
                         'assets/images/contact.png',
-                        height: 80,
+//                        height: 80,
                         fit: BoxFit.contain,
                       ),
                       onPressed: () {
@@ -123,7 +124,7 @@ class MenuScreen extends StatelessWidget {
                       title: 'Donate',
                       image: Image.asset(
                         'assets/images/donate.png',
-                        height: 80,
+//                        height: 80,
                         fit: BoxFit.contain,
                       ),
                       onPressed: () async {
@@ -138,9 +139,8 @@ class MenuScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              color: Colors.transparent,
-              child: InkWell(
+            GestureDetector(
+              child: Center(
                 child: Text(
                   'Developed by Alif',
                   style: TextStyle(
@@ -149,17 +149,17 @@ class MenuScreen extends StatelessWidget {
                     decoration: TextDecoration.underline,
                   ),
                 ),
-                onTap: () async {
-                  if (await canLaunch(kMyWebSiteURL)) {
-                    await launch(kMyWebSiteURL);
-                  } else {
-                    throw 'Could not Launch $kMyWebSiteURL';
-                  }
-                },
               ),
+              onTap: () async {
+                if (await canLaunch(kMyWebSiteURL)) {
+                  await launch(kMyWebSiteURL);
+                } else {
+                  throw 'Could not Launch $kMyWebSiteURL';
+                }
+              },
             ),
             SizedBox(
-              height: 15,
+              height: 13,
             ),
           ],
         ),

@@ -84,29 +84,39 @@ class _StatisticsPageState extends State<StatisticsPage> {
             Padding(
               padding: EdgeInsets.all(20),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       StateCard(
-                          stateCardIcon: Icon(
-                            FontAwesomeIcons.globeAmericas,
-                            size: 30.0,
-                            color: Colors.blueAccent,
-                          ),
-                          textNumber: totalCases.toString(),
-                          catagoryName: 'Total Cases'),
+                        stateCardIcon: Icon(
+                          FontAwesomeIcons.globeAmericas,
+                          size: 30.0,
+                          color: Colors.blueAccent,
+                        ),
+                        textNumber: totalCases.toString(),
+                        catagoryName: 'Total Cases',
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(CountriesPage.id);
+                        },
+                      ),
                       SizedBox(
                         width: 16.0,
                       ),
                       StateCard(
-                          stateCardIcon: Icon(
-                            FontAwesomeIcons.flagCheckered,
-                            size: 30.0,
-                            color: Colors.orangeAccent,
-                          ),
-                          textNumber: active.toString(),
-                          catagoryName: 'Active Cases'),
+                        stateCardIcon: Icon(
+                          FontAwesomeIcons.flagCheckered,
+                          size: 30.0,
+                          color: Colors.orangeAccent,
+                        ),
+                        textNumber: active.toString(),
+                        catagoryName: 'Active Cases',
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(CountriesPage.id);
+                        },
+                      ),
                     ],
                   ),
                   SizedBox(
@@ -167,7 +177,7 @@ class _StatisticsPageState extends State<StatisticsPage> {
                             child: Container(
                               child: Image.asset(
                                 'assets/images/statecoronamap.png',
-                                height: 250.0,
+                                height: 180.0,
                                 fit: BoxFit.contain,
                               ),
                             ),

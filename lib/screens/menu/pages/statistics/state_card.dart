@@ -16,6 +16,7 @@ class StateCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: InkWell(
+        onTap: onPressed,
         child: Card(
           color: Colors.white,
           elevation: 8.0,
@@ -25,7 +26,7 @@ class StateCard extends StatelessWidget {
             ),
           ),
           child: Padding(
-            padding: EdgeInsets.all(13.0),
+            padding: EdgeInsets.all(10.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
