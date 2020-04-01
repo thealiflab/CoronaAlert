@@ -8,9 +8,10 @@ import 'screen_widgets/menu_card.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'pages/contact/contact_page.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import 'pages/news/news_link.dart';
 import 'pages/vtest/vtest_page.dart';
 import 'package:coronaalert/constants.dart';
+import 'pages/news/news_card.dart';
+import 'pages/donate/donate_card.dart';
 
 class MenuScreen extends StatelessWidget {
   static const id = 'menu_screen';
@@ -34,106 +35,79 @@ class MenuScreen extends StatelessWidget {
                       title: 'Virtual Test',
                       image: Image.asset(
                         'assets/images/vtest.png',
-//                        height: 80,
                         fit: BoxFit.contain,
                       ),
                       onPressed: () {
                         Navigator.of(context).pushNamed(VirtualTest.id);
                       },
+                      cardShadow: 9.0,
                     ),
                     MenuCard(
                       title: 'Rules',
                       image: Image.asset(
                         'assets/images/rules.png',
-//                        height: 80,
                         fit: BoxFit.contain,
                       ),
                       onPressed: () {
                         Navigator.of(context).pushNamed(StepsScreen.id);
                       },
-                    ),
-                    MenuCard(
-                        title: 'News',
-                        image: Image.asset(
-                          'assets/images/news.png',
-//                          height: 80,
-                          fit: BoxFit.contain,
-                        ),
-                        onPressed: () {
-                          Alert(
-                            context: context,
-                            type: AlertType.none,
-                            title: '',
-                            content: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: <Widget>[
-                                NewsLink(
-                                  newsImageURL: 'assets/images/bbc.png',
-                                  newsPortalName: 'BBC',
-                                  urlRedirect: kBBCLink,
-                                ),
-                                NewsLink(
-                                  newsImageURL: 'assets/images/cnn.png',
-                                  newsPortalName: 'CNN',
-                                  urlRedirect: kCNNlink,
-                                ),
-                                NewsLink(
-                                  newsImageURL: 'assets/images/guardian.png',
-                                  newsPortalName: 'Guardian',
-                                  urlRedirect: kGuardianLink,
-                                ),
-                                NewsLink(
-                                  newsImageURL: 'assets/images/prothomalo.png',
-                                  newsPortalName: 'Prothom-Alo',
-                                  urlRedirect: kProthomAloLink,
-                                ),
-                                NewsLink(
-                                  newsImageURL: 'assets/images/dailystar.png',
-                                  newsPortalName: 'The Daily Star',
-                                  urlRedirect: kDSLink,
-                                ),
-                              ],
-                            ),
-                            closeFunction: () {},
-                          ).show();
-                        }),
-                    MenuCard(
-                      title: 'Statistics',
-                      image: Image.asset(
-                        'assets/images/statistics.png',
-//                        height: 50,
-                        fit: BoxFit.contain,
-                      ),
-                      onPressed: () {
-                        Navigator.of(context).pushNamed(StatisticsPage.id);
-                      },
+                      cardShadow: 9.0,
                     ),
                     MenuCard(
                       title: 'Contact',
                       image: Image.asset(
                         'assets/images/contact.png',
-//                        height: 80,
                         fit: BoxFit.contain,
                       ),
                       onPressed: () {
                         Navigator.of(context).pushNamed(ContactPage.id);
                       },
+                      cardShadow: 9.0,
+                    ),
+                    MenuCard(
+                      title: 'Statistics',
+                      image: Image.asset(
+                        'assets/images/statistics.png',
+                        fit: BoxFit.contain,
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pushNamed(StatisticsPage.id);
+                      },
+                      cardShadow: 9.0,
+                    ),
+                    MenuCard(
+                      title: 'News',
+                      image: Image.asset(
+                        'assets/images/news.png',
+                        fit: BoxFit.contain,
+                      ),
+                      onPressed: () {
+                        Alert(
+                          context: context,
+                          type: AlertType.none,
+                          title: '',
+                          content: NewsCard(),
+                          closeFunction: () {},
+                        ).show();
+                      },
+                      cardShadow: 5.0,
                     ),
                     MenuCard(
                       title: 'Donate',
                       image: Image.asset(
                         'assets/images/donate.png',
-//                        height: 80,
                         fit: BoxFit.contain,
                       ),
-                      onPressed: () async {
-                        if (await canLaunch(kBkashDonateLink)) {
-                          await launch(kBkashDonateLink);
-                        } else {
-                          throw "Couldn't Launch $kBkashDonateLink";
-                        }
+                      onPressed: () {
+                        Alert(
+                          context: context,
+                          type: AlertType.none,
+                          title: '',
+                          content: DonateCard(),
+                          closeFunction: () {},
+                        ).show();
                       },
+                      cardShadow: 5.0,
                     ),
                   ],
                 ),
@@ -167,11 +141,3 @@ class MenuScreen extends StatelessWidget {
     );
   }
 }
-
-//() async {
-//if (await canLaunch(kNewsLink)) {
-//await launch(kNewsLink);
-//} else {
-//throw 'Could not launch $kNewsLink';
-//}
-//},

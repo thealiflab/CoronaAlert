@@ -4,8 +4,14 @@ class MenuCard extends StatelessWidget {
   final String title;
   final Widget image;
   final Function onPressed;
+  final double cardShadow;
 
-  MenuCard({this.title, this.image, @required this.onPressed});
+  MenuCard({
+    this.title,
+    this.image,
+    @required this.onPressed,
+    this.cardShadow,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +21,7 @@ class MenuCard extends StatelessWidget {
         splashColor: Colors.grey[600],
         child: Card(
           margin: EdgeInsets.all(10.0),
-          elevation: 8.0,
+          elevation: cardShadow,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(10),

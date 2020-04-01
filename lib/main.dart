@@ -18,10 +18,10 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.white,
         fontFamily: 'PTSans',
       ),
-      initialRoute: StepsScreen.id,
+      initialRoute: MenuScreen.id,
       routes: {
-        StepsScreen.id: (context) => StepsScreen(),
         MenuScreen.id: (context) => MenuScreen(),
+        StepsScreen.id: (context) => StepsScreen(),
         ContactPage.id: (context) => ContactPage(),
         VirtualTest.id: (context) => VirtualTest(),
         StatisticsPage.id: (context) => StatisticsPage(),

@@ -15,18 +15,20 @@ VTestBrain vTestBrain = VTestBrain();
 class _VirtualTestState extends State<VirtualTest> {
   int questionValueKeeper = 0;
   int quesNo = 1;
+  String _testResultText;
 
   void checkAnswers(bool userSelectAnswer) {
     setState(() {
       if (vTestBrain.isFinished() == true) {
         vTestBrain.reset();
         quesNo = 1;
+        _testResultText = vTestBrain.vTestResult(questionValueKeeper);
 
         Alert(
           context: context,
           type: AlertType.info,
           title: "Your Result \"Probably\"",
-          desc: vTestBrain.vTestResult(questionValueKeeper),
+          desc: _testResultText,
           closeFunction: () {
             questionValueKeeper = 0;
           },
@@ -133,7 +135,7 @@ class _VirtualTestState extends State<VirtualTest> {
                   ),
                 ),
                 textColor: Colors.white,
-                color: Color(0xFF52de97),
+                color: Colors.redAccent,
                 child: Text(
                   'No',
                   style: TextStyle(
@@ -168,7 +170,7 @@ class _VirtualTestState extends State<VirtualTest> {
                   ),
                 ),
                 textColor: Colors.white,
-                color: Colors.redAccent,
+                color: Color(0xFF52de97),
                 child: Text(
                   'Yes',
                   style: TextStyle(

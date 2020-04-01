@@ -50,18 +50,18 @@ class VTestBrain {
   }
 
   String vTestResult(int value) {
-    String message;
+    String _message;
     if (value >= 0 && value <= 4) {
-      message = "NO RISK of having Corona virus. You are safe 😇";
+      _message = "NO RISK of having Corona virus. You are safe 😇";
     } else if (value >= 5 && value <= 7) {
-      message =
+      _message =
           "MEDIUM Risk of having Corona virus. Drink enough water and maintain good hygiene! 😓";
     } else if (value > 7) {
-      message =
+      _message =
           "HIGH Risk of having Corona virus. Please immediately admit into the hospital 🏥 😱";
     } else {
-      message = "Invalid Result";
+      _message = "Invalid Result";
     }
-    return message;
+    return _message;
   }
 }

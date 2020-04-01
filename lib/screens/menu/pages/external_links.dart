@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class NewsLink extends StatelessWidget {
+class ExternalLink extends StatelessWidget {
   final String newsImageURL;
   final String newsPortalName;
   final String urlRedirect;
 
-  NewsLink(
+  ExternalLink(
       {this.newsImageURL, this.newsPortalName, @required this.urlRedirect});
 
   _gotoWeb(String url) async {
@@ -38,7 +38,13 @@ class NewsLink extends StatelessWidget {
             SizedBox(
               width: 10,
             ),
-            Text(newsPortalName),
+            Text(
+              newsPortalName,
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
           ],
         ),
       ),
