@@ -7,6 +7,7 @@ import 'dart:convert';
 import 'dart:async';
 import 'country/countries_page.dart';
 import 'package:coronaalert/constants.dart';
+import 'country/country_card.dart';
 
 bool showSpinner = false;
 
@@ -18,18 +19,20 @@ class StatisticsPage extends StatefulWidget {
 }
 
 class _StatisticsPageState extends State<StatisticsPage> {
+  //For World Wide
   int totalCases = 0;
   int active = 0;
   int deaths = 0;
   int recovered = 0;
 
-  String countryName;
-  int totalCasesOfYourCountry = 0;
-  int todayCasesOfYourCountry = 0;
-  int activeCasesOfYourCountry = 0;
-  int deathsOfYourCountry = 0;
-  int recoveredOfYourCountry = 0;
-  String countryFlag;
+  //For Your Country
+  String countryName = '';
+  String totalCasesOfCountry = '';
+  String todayCasesOfCountry = '';
+  String activeCasesOfCountry = '';
+  String deathsOfCountry = '';
+  String recoveredOfCountry = '';
+  String countryFlag = '';
 
   Future getData() async {
     try {
@@ -62,19 +65,19 @@ class _StatisticsPageState extends State<StatisticsPage> {
       if (response.statusCode >= 200 && response.statusCode <= 299) {
         print(response.statusCode);
         setState(() {
-          countryName = data['country'];
-          totalCasesOfYourCountry = data['cases'];
-          todayCasesOfYourCountry = data['todayCases'];
-          activeCasesOfYourCountry = data['active'];
-          deathsOfYourCountry = data['deaths'];
-          recoveredOfYourCountry = data['recovered'];
-          countryFlag = data['countryInfo']['flag'];
+          countryName = data['country'].toString();
+          countryFlag = data['countryInfo']['flag'].toString();
+          totalCasesOfCountry = data['cases'].toString();
+          todayCasesOfCountry = data['todayCases'].toString();
+          activeCasesOfCountry = data['active'].toString();
+          deathsOfCountry = data['deaths'].toString();
+          recoveredOfCountry = data['recovered'].toString();
         });
       } else {
         print(response.statusCode);
       }
     } catch (e) {
-      print("Exception Caught which is " + e + ". Also status code is: ");
+      print("Exception Caught which is " + e);
     }
   }
 
@@ -188,83 +191,14 @@ class _StatisticsPageState extends State<StatisticsPage> {
                   SizedBox(
                     height: 10,
                   ),
-                  Card(
-                    color: Colors.white,
-                    elevation: 8.0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
-                      ),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.all(12.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Text(
-                                '$countryName',
-                                style: TextStyle(
-                                  fontSize: 27,
-                                ),
-                              ),
-                              SizedBox(
-                                width: 7.0,
-                              ),
-                              Image.network(
-                                '$countryFlag',
-                                width: 25,
-                                height: 25,
-                                fit: BoxFit.contain,
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              Text(
-                                '📌 Total Cases: $totalCasesOfYourCountry',
-                                style: kCountryCardTextStyle,
-                              ),
-                              SizedBox(
-                                height: 8.0,
-                              ),
-                              Text(
-                                '📈 Today\'s Cases: $todayCasesOfYourCountry',
-                                style: kCountryCardTextStyle,
-                              ),
-                              SizedBox(
-                                height: 8.0,
-                              ),
-                              Text(
-                                '🔔 Active Cases: $activeCasesOfYourCountry',
-                                style: kCountryCardTextStyle,
-                              ),
-                              SizedBox(
-                                height: 8.0,
-                              ),
-                              Text(
-                                '💀 Deaths: $totalCasesOfYourCountry',
-                                style: kCountryCardTextStyle,
-                              ),
-                              SizedBox(
-                                height: 8.0,
-                              ),
-                              Text(
-                                '✔ Recoverd: $recoveredOfYourCountry',
-                                style: kCountryCardTextStyle,
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
+                  CountryCard(
+                    countryName: countryName,
+                    countryFlag: countryFlag,
+                    totalCasesOfCountry: totalCasesOfCountry,
+                    todayCasesOfCountry: todayCasesOfCountry,
+                    activeCasesOfCountry: activeCasesOfCountry,
+                    deaths: deathsOfCountry,
+                    recoveredOfCountry: recoveredOfCountry,
                   ),
                   SizedBox(
                     height: 15,

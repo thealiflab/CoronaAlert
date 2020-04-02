@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:coronaalert/constants.dart';
+import 'country_card.dart';
 
 class CountriesPage extends StatefulWidget {
   static const id = '/countries_page';
@@ -12,34 +13,53 @@ class CountriesPage extends StatefulWidget {
 }
 
 class _CountriesPageState extends State<CountriesPage> {
-  Future<List<dynamic>> fetchCountries() async {
-    var result = await http.get(apiURL + "countries");
-    return json.decode((result.body));
+  Future<List<dynamic>> getCountriesData() async {
+    try {
+      http.Response response = await http.get(apiURL + 'countries/');
+
+      List data = json.decode(response.body) as List;
+
+      if (response.statusCode >= 200 && response.statusCode <= 299) {
+        return data;
+      } else {
+        print(response.statusCode);
+      }
+    } catch (e) {
+      print("Exception Caught which is " + e);
+    }
   }
 
-  String _cases(Map<dynamic, dynamic> user) {
-    return "📌  Cases: " + user['cases'].toString();
+  String _countryName(Map<dynamic, dynamic> data) {
+    return data['country'];
   }
 
-  String _casesToday(Map<dynamic, dynamic> user) {
-    return "🔔  Today's Cases: " + user['todayCases'].toString();
+  String _countryFlag(Map<dynamic, dynamic> data) {
+    return data['countryInfo']['flag'];
   }
 
-  String _deaths(Map<dynamic, dynamic> user) {
-    return "💀  Deaths: " + user['deaths'].toString();
+  String _totalCasesOfYourCountry(Map<dynamic, dynamic> data) {
+    return data['cases'].toString();
   }
 
-  String _deathsToday(Map<dynamic, dynamic> user) {
-    return "✔  Recovered: " + user['recovered'].toString();
+  String _todayCasesOfYourCountry(Map<dynamic, dynamic> data) {
+    return data['todayCases'].toString();
   }
 
-  String _location(Map<dynamic, dynamic> user) {
-    return user['country'] + "\n";
+  String _activeCasesOfYourCountry(Map<dynamic, dynamic> data) {
+    return data['active'].toString();
+  }
+
+  String _deathsOfYourCountry(Map<dynamic, dynamic> data) {
+    return data['deaths'].toString();
+  }
+
+  String _recoveredOfYourCountry(Map<dynamic, dynamic> data) {
+    return data['recovered'].toString();
   }
 
   @override
   void initState() {
-    fetchCountries();
+    getCountriesData();
     super.initState();
   }
 
@@ -52,43 +72,26 @@ class _CountriesPageState extends State<CountriesPage> {
       ),
       body: Container(
         child: FutureBuilder<List<dynamic>>(
-          future: fetchCountries(),
+          future: getCountriesData(),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             if (snapshot.hasData) {
               return ListView.builder(
                   padding: EdgeInsets.all(12),
                   itemCount: snapshot.data.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return Card(
-                      child: Column(
-                        children: <Widget>[
-                          ListTile(
-                            title: Center(
-                              child: Text(
-                                _location(snapshot.data[index]),
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 24,
-                                  decoration: TextDecoration.underline,
-                                ),
-                              ),
-                            ),
-                            subtitle: Center(
-                              child: Text(
-                                _cases(snapshot.data[index]) +
-                                    "\n\n" +
-                                    _casesToday(snapshot.data[index]) +
-                                    "\n\n" +
-                                    _deaths(snapshot.data[index]) +
-                                    "\n\n" +
-                                    _deathsToday(snapshot.data[index]),
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 16),
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
+                    //_countryName(snapshot.data[index]),
+                    return CountryCard(
+                      countryName: _countryName(snapshot.data[index]),
+                      countryFlag: _countryFlag(snapshot.data[index]),
+                      totalCasesOfCountry:
+                          _totalCasesOfYourCountry(snapshot.data[index]),
+                      todayCasesOfCountry:
+                          _todayCasesOfYourCountry(snapshot.data[index]),
+                      activeCasesOfCountry:
+                          _activeCasesOfYourCountry(snapshot.data[index]),
+                      deaths: _deathsOfYourCountry(snapshot.data[index]),
+                      recoveredOfCountry:
+                          _recoveredOfYourCountry(snapshot.data[index]),
                     );
                   });
             } else {
