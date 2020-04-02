@@ -23,8 +23,13 @@ class _StatisticsPageState extends State<StatisticsPage> {
   int deaths = 0;
   int recovered = 0;
 
-  List countriesList;
-  int numberOfCountries;
+  String countryName;
+  int totalCasesOfYourCountry = 0;
+  int todayCasesOfYourCountry = 0;
+  int activeCasesOfYourCountry = 0;
+  int deathsOfYourCountry = 0;
+  int recoveredOfYourCountry = 0;
+  String countryFlag;
 
   Future getData() async {
     try {
@@ -48,23 +53,35 @@ class _StatisticsPageState extends State<StatisticsPage> {
     }
   }
 
-  Future getCountriesData() async {
-    http.Response response = await http.get(apiURL + 'countries');
-    if (response.statusCode >= 200 && response.statusCode <= 299) {
-      setState(() {
-        countriesList = jsonDecode(response.body);
-        numberOfCountries = countriesList.length;
-//        print(countriesList);
-      });
-    } else {
-      print('Server Error:${response.statusCode}');
+  Future getCountryData() async {
+    try {
+      http.Response response = await http.get(apiURL + 'countries/bangladesh');
+
+      Map<String, dynamic> data = jsonDecode(response.body);
+
+      if (response.statusCode >= 200 && response.statusCode <= 299) {
+        print(response.statusCode);
+        setState(() {
+          countryName = data['country'];
+          totalCasesOfYourCountry = data['cases'];
+          todayCasesOfYourCountry = data['todayCases'];
+          activeCasesOfYourCountry = data['active'];
+          deathsOfYourCountry = data['deaths'];
+          recoveredOfYourCountry = data['recovered'];
+          countryFlag = data['countryInfo']['flag'];
+        });
+      } else {
+        print(response.statusCode);
+      }
+    } catch (e) {
+      print("Exception Caught which is " + e + ". Also status code is: ");
     }
   }
 
   @override
   void initState() {
     getData();
-    getCountriesData();
+    getCountryData();
 //    Timer.periodic(Duration(hours: 3), (Timer t) => getCountriesData());
 //    Timer.periodic(Duration(hours: 3), (Timer t) => getData());
     super.initState();
@@ -87,6 +104,19 @@ class _StatisticsPageState extends State<StatisticsPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
+                  Center(
+                    child: Text(
+                      'World Wide',
+                      style: TextStyle(
+                        fontSize: 17,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w900,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
@@ -98,9 +128,6 @@ class _StatisticsPageState extends State<StatisticsPage> {
                         ),
                         textNumber: totalCases.toString(),
                         catagoryName: 'Total Cases',
-                        onPressed: () {
-                          Navigator.of(context).pushNamed(CountriesPage.id);
-                        },
                       ),
                       SizedBox(
                         width: 16.0,
@@ -113,9 +140,6 @@ class _StatisticsPageState extends State<StatisticsPage> {
                         ),
                         textNumber: active.toString(),
                         catagoryName: 'Active Cases',
-                        onPressed: () {
-                          Navigator.of(context).pushNamed(CountriesPage.id);
-                        },
                       ),
                     ],
                   ),
@@ -148,46 +172,117 @@ class _StatisticsPageState extends State<StatisticsPage> {
                       ),
                     ],
                   ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 20,
-                      vertical: 10,
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Center(
+                    child: Text(
+                      'Your Country\'s Statistics',
+                      style: TextStyle(
+                        fontSize: 17,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w900,
+                      ),
                     ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        SizedBox(
-                          height: 20,
-                        ),
-                        Text(
-                          'World Map of Infected COVID-19',
-                          style: TextStyle(
-                            decoration: TextDecoration.underline,
-                            fontSize: 17,
-                            color: Colors.black,
-                            fontWeight: FontWeight.w900,
-                          ),
-                        ),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        Center(
-                          child: InkWell(
-                            onTap: () {
-                              Navigator.of(context).pushNamed(CountriesPage.id);
-                            },
-                            child: Container(
-                              child: Image.asset(
-                                'assets/images/statecoronamap.png',
-                                height: 190.0,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Card(
+                    color: Colors.white,
+                    elevation: 8.0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10),
+                      ),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(12.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                '$countryName',
+                                style: TextStyle(
+                                  fontSize: 27,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 7.0,
+                              ),
+                              Image.network(
+                                '$countryFlag',
+                                width: 25,
+                                height: 25,
                                 fit: BoxFit.contain,
                               ),
-                            ),
+                            ],
                           ),
-                        ),
-                      ],
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Text(
+                                '📌 Total Cases: $totalCasesOfYourCountry',
+                                style: kCountryCardTextStyle,
+                              ),
+                              SizedBox(
+                                height: 8.0,
+                              ),
+                              Text(
+                                '📈 Today\'s Cases: $todayCasesOfYourCountry',
+                                style: kCountryCardTextStyle,
+                              ),
+                              SizedBox(
+                                height: 8.0,
+                              ),
+                              Text(
+                                '🔔 Active Cases: $activeCasesOfYourCountry',
+                                style: kCountryCardTextStyle,
+                              ),
+                              SizedBox(
+                                height: 8.0,
+                              ),
+                              Text(
+                                '💀 Deaths: $totalCasesOfYourCountry',
+                                style: kCountryCardTextStyle,
+                              ),
+                              SizedBox(
+                                height: 8.0,
+                              ),
+                              Text(
+                                '✔ Recoverd: $recoveredOfYourCountry',
+                                style: kCountryCardTextStyle,
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
                     ),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  GestureDetector(
+                    child: Center(
+                      child: Text(
+                        'See More Countries',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.blue,
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.of(context).pushNamed(CountriesPage.id);
+                    },
                   ),
                 ],
               ),

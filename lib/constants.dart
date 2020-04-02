@@ -1,4 +1,6 @@
 //news links
+import 'package:flutter/cupertino.dart';
+
 const kBBCLink = "https://www.bbc.com/news/coronavirus";
 const kCNNlink = "https://edition.cnn.com/";
 const kGuardianLink = "https://www.theguardian.com/world/coronavirus-outbreak";
@@ -14,3 +16,8 @@ const kEkRonga = "http://ekrongaekghuri.com/";
 //many more links
 const kMyWebSiteURL = "https://ahmedalif.com/";
 final apiURL = "https://corona.lmao.ninja/";
+
+//styling
+const kCountryCardTextStyle = TextStyle(
+  fontSize: 22,
+);

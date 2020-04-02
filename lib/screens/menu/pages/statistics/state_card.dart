@@ -4,19 +4,17 @@ class StateCard extends StatelessWidget {
   final Icon stateCardIcon;
   final String textNumber;
   final String catagoryName;
-  final Function onPressed;
 
-  StateCard(
-      {@required this.stateCardIcon,
-      @required this.textNumber,
-      @required this.catagoryName,
-      this.onPressed});
+  StateCard({
+    @required this.stateCardIcon,
+    @required this.textNumber,
+    @required this.catagoryName,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: InkWell(
-        onTap: onPressed,
         child: Card(
           color: Colors.white,
           elevation: 8.0,
