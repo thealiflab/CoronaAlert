@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:coronaalert/localization/app_localizations.dart';
 
 class StepTitle extends StatelessWidget {
   final String title;
@@ -10,7 +11,7 @@ class StepTitle extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(10.0),
       child: Text(
-        title,
+        "${AppLocalizations.of(context).translate('sTitle$title')}",
         textAlign: TextAlign.center,
         style: TextStyle(
           color: Colors.white,

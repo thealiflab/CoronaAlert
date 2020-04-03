@@ -2,7 +2,7 @@ import 'package:coronaalert/screens/menu/menu_screen.dart';
 import 'package:flutter/material.dart';
 import 'vtest_brain.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import '../../../../localization/app_localizations.dart';
+import 'package:coronaalert/localization/app_localizations.dart';
 
 class VirtualTest extends StatefulWidget {
   static const id = '/vtest_page';

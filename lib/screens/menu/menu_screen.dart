@@ -1,6 +1,6 @@
 import 'package:coronaalert/screens/menu/pages/statistics/statistics_page.dart';
 import 'package:coronaalert/screens/menu/pages/vtest/vtest_page.dart';
-import 'package:coronaalert/screens/steps/steps_screen.dart';
+import 'package:coronaalert/screens/menu/pages/steps/steps_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -13,8 +13,8 @@ import 'pages/vtest/vtest_page.dart';
 import 'package:coronaalert/constants.dart';
 import 'pages/news/news_card.dart';
 import 'pages/donate/donate_card.dart';
-import '../../localization/app_localizations.dart';
-import '../../localization/app_language.dart';
+import 'package:coronaalert/localization/app_localizations.dart';
+import 'package:coronaalert/localization/app_language.dart';
 import 'package:provider/provider.dart';
 
 bool switchValue = false;

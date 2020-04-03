@@ -3,7 +3,7 @@ import 'package:coronaalert/screens/menu/pages/contact/contact_page.dart';
 import 'package:coronaalert/screens/menu/pages/statistics/statistics_page.dart';
 import 'package:coronaalert/screens/menu/pages/vtest/vtest_page.dart';
 import 'package:flutter/material.dart';
-import 'screens/steps/steps_screen.dart';
+import 'package:coronaalert/screens/menu/pages/steps/steps_screen.dart';
 import 'screens/menu/pages/statistics/country/countries_page.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'localization/app_localizations.dart';

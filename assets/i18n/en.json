@@ -27,5 +27,25 @@
   "vNoRisk": "NO RISK of having Corona virus. You are safe \uD83D\uDE07",
   "vMediumRisk": "MEDIUM Risk of having Corona virus. Drink enough water and maintain good hygiene! \uD83D\uDE13",
   "vHighRisk": "HIGH Risk of having Corona virus. Please immediately admit into the hospital \uD83C\uDFE5 \uD83D\uDE31",
-  "vInvalid": "Invalid Result"
+  "vInvalid": "Invalid Result",
+
+  "sTitleWashYourHands": "Wash Your Hands",
+  "sTitleDontLeaveYourHouse": "Don't Leave Your House",
+  "sTitleNoHandShake": "No Hand-Shake",
+  "sTitleCoverYourCough": "Cover Your Cough",
+  "sTitleDontTouchYourFace": "Don't Touch Your Face",
+  "sTitleProtectYourself": "Protect Yourself",
+  "sTitleCleanandDisinfect": "Clean and Disinfect",
+
+  "sDescWashYourHands": "Regularly you thoroughly clean both sides of your hands, till your wrist, including the underside of your  fingernails by washing them with soap and water for at least 20 seconds.",
+  "sDescDontLeaveYourHouse": "People who are mildly ill with COVID-19 are able to recover at home. So do not leave, except to get medical care. Do not visit public areas. Be sure to get care if you feel worse or you think it is an emergency.",
+  "sDescNoHandShake": "Refrain from shaking hands with or embracing known or unknown people.",
+  "sDescCoverYourCough": "Cover your nose and mouth when coughing or sneezing with a tissue (or with your bent elbow if no tissue is available)",
+  "sDescDontTouchYourFace": "If your hands are not clean, avoid touching your face including eyes, nose and mouth",
+  "sDescProtectYourself": "Wear a mask if you're sick. You do not need to wear a face-mask unless you are caring for someone who is sick. Face-masks may be in short supply and they should be saved for caregivers",
+  "sDescCleanandDisinfect": "Dispose of the used tissue immediately and clean your hands with soap and water or sanitizers",
+
+  "sMenu": "Menu",
+  "sSkip": "Skip"
+
 }
