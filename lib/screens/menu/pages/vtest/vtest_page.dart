@@ -2,6 +2,7 @@ import 'package:coronaalert/screens/menu/menu_screen.dart';
 import 'package:flutter/material.dart';
 import 'vtest_brain.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+import '../../../../localization/app_localizations.dart';
 
 class VirtualTest extends StatefulWidget {
   static const id = '/vtest_page';
@@ -14,8 +15,8 @@ VTestBrain vTestBrain = VTestBrain();
 
 class _VirtualTestState extends State<VirtualTest> {
   int questionValueKeeper = 0;
-  int quesNo = 1;
   String _testResultText;
+  int quesNo = 1;
 
   void checkAnswers(bool userSelectAnswer) {
     setState(() {
@@ -27,15 +28,16 @@ class _VirtualTestState extends State<VirtualTest> {
         Alert(
           context: context,
           type: AlertType.info,
-          title: "Your Result \"Probably\"",
-          desc: _testResultText,
+          title: "${AppLocalizations.of(context).translate('vAlertHeader')}",
+          desc:
+              "${AppLocalizations.of(context).translate('v$_testResultText')}",
           closeFunction: () {
             questionValueKeeper = 0;
           },
           buttons: [
             DialogButton(
               child: Text(
-                "Re-Test",
+                "${AppLocalizations.of(context).translate('vReTestButton')}",
                 style: TextStyle(fontSize: 20),
               ),
               onPressed: () {
@@ -46,7 +48,7 @@ class _VirtualTestState extends State<VirtualTest> {
             ),
             DialogButton(
               child: Text(
-                "CANCLE",
+                "${AppLocalizations.of(context).translate('vCancelButton')}",
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
               ),
@@ -72,8 +74,17 @@ class _VirtualTestState extends State<VirtualTest> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Virtual Test'),
+        title: Text('${AppLocalizations.of(context).translate('vTestTitle')}'),
         centerTitle: true,
+        leading: IconButton(
+          icon: new Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            vTestBrain.reset();
+            _testResultText = vTestBrain.vTestResult(questionValueKeeper);
+            questionValueKeeper = 0;
+            Navigator.pop(context);
+          },
+        ),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -94,7 +105,7 @@ class _VirtualTestState extends State<VirtualTest> {
           ),
           Center(
             child: Text(
-              'Take the Test: $quesNo/10',
+              '${AppLocalizations.of(context).translate('vTestHeader')}',
               style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w600,
@@ -106,7 +117,7 @@ class _VirtualTestState extends State<VirtualTest> {
               child: Padding(
                 padding: EdgeInsets.all(35),
                 child: Text(
-                  vTestBrain.getQuestionText(),
+                  AppLocalizations.of(context).translate("vQ$quesNo"),
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontStyle: FontStyle.italic,
@@ -137,7 +148,7 @@ class _VirtualTestState extends State<VirtualTest> {
                 textColor: Colors.white,
                 color: Colors.redAccent,
                 child: Text(
-                  'No',
+                  AppLocalizations.of(context).translate('vButtonNo'),
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 20.0,
@@ -172,7 +183,7 @@ class _VirtualTestState extends State<VirtualTest> {
                 textColor: Colors.white,
                 color: Color(0xFF52de97),
                 child: Text(
-                  'Yes',
+                  AppLocalizations.of(context).translate('vButtonYes'),
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 20.0,

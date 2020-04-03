@@ -17,6 +17,8 @@ import '../../localization/app_localizations.dart';
 import '../../localization/app_language.dart';
 import 'package:provider/provider.dart';
 
+bool switchValue = false;
+
 class MenuScreen extends StatefulWidget {
   static const id = 'menu_screen';
 
@@ -25,8 +27,6 @@ class MenuScreen extends StatefulWidget {
 }
 
 class _MenuScreenState extends State<MenuScreen> {
-  bool switchValue = true;
-
   onSwitchValueChanged(bool newValue) {
     setState(() {
       switchValue = newValue;
@@ -148,12 +148,12 @@ class _MenuScreenState extends State<MenuScreen> {
                 Switch(
                   value: switchValue,
                   onChanged: (newValue) {
-                    onSwitchValueChanged(newValue);
-                    if (newValue) {
+                    if (newValue == true) {
                       appLanguage.changeLanguage(Locale("bn"));
-                    } else {
+                    } else if (newValue == false) {
                       appLanguage.changeLanguage(Locale("en"));
                     }
+                    onSwitchValueChanged(newValue);
                   },
                   activeColor: Colors.cyan,
                 ),

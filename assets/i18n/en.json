@@ -5,5 +5,27 @@
   "menuCard3": "Contact",
   "menuCard4": "Statistics",
   "menuCard5": "News",
-  "menuCard6": "Donate"
+  "menuCard6": "Donate",
+
+  "vTestTitle": "Virtual Test",
+  "vTestHeader": "COVID-19 TEST",
+  "vButtonYes": "Yes",
+  "vButtonNo": "No",
+  "vAlertHeader": "Your Result! \nAccording WHO symptoms",
+  "vReTestButton": "Re-Test",
+  "vCancelButton": "Cancel",
+  "vQ1": "Do you have dry cough?",
+  "vQ2": "Do you have fever? (Temperature above 38 degree)",
+  "vQ3": "Are you having diarrhea?",
+  "vQ4": "Are you experiencing tiredness?",
+  "vQ5": "Do you feel confused recently?",
+  "vQ6": "Are you having pain in your throat?",
+  "vQ7": "Are you experiencing difficulty to take breath?",
+  "vQ8": "Have you traveled recently during the last 15-20 days?",
+  "vQ9": "Do you have any nearby physical contact with COVID-19 patient?",
+  "vQ10": "Have you visited Corona infected area recently?",
+  "vNoRisk": "NO RISK of having Corona virus. You are safe \uD83D\uDE07",
+  "vMediumRisk": "MEDIUM Risk of having Corona virus. Drink enough water and maintain good hygiene! \uD83D\uDE13",
+  "vHighRisk": "HIGH Risk of having Corona virus. Please immediately admit into the hospital \uD83C\uDFE5 \uD83D\uDE31",
+  "vInvalid": "Invalid Result"
 }
