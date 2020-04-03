@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../localization/app_localizations.dart';
 
 class MenuHeader extends StatelessWidget {
   @override
@@ -11,7 +12,7 @@ class MenuHeader extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
           Text(
-            'Corona Alert',
+            AppLocalizations.of(context).translate('menuHeader'),
             style: TextStyle(
               fontSize: 30.0,
               letterSpacing: 3,

@@ -3,6 +3,7 @@ import 'package:coronaalert/screens/menu/pages/vtest/vtest_page.dart';
 import 'package:coronaalert/screens/steps/steps_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'screen_widgets/menu_header.dart';
 import 'screen_widgets/menu_card.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -12,12 +13,29 @@ import 'pages/vtest/vtest_page.dart';
 import 'package:coronaalert/constants.dart';
 import 'pages/news/news_card.dart';
 import 'pages/donate/donate_card.dart';
+import '../../localization/app_localizations.dart';
+import '../../localization/app_language.dart';
+import 'package:provider/provider.dart';
 
-class MenuScreen extends StatelessWidget {
+class MenuScreen extends StatefulWidget {
   static const id = 'menu_screen';
 
   @override
+  _MenuScreenState createState() => _MenuScreenState();
+}
+
+class _MenuScreenState extends State<MenuScreen> {
+  bool switchValue = true;
+
+  onSwitchValueChanged(bool newValue) {
+    setState(() {
+      switchValue = newValue;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
+    var appLanguage = Provider.of<AppLanguage>(context);
     return Scaffold(
       body: Container(
         color: Colors.white,
@@ -32,7 +50,8 @@ class MenuScreen extends StatelessWidget {
                   physics: NeverScrollableScrollPhysics(),
                   children: <Widget>[
                     MenuCard(
-                      title: 'Virtual Test',
+                      title:
+                          AppLocalizations.of(context).translate('menuCard1'),
                       image: Image.asset(
                         'assets/images/vtest.png',
                         fit: BoxFit.contain,
@@ -43,7 +62,8 @@ class MenuScreen extends StatelessWidget {
                       cardShadow: 9.0,
                     ),
                     MenuCard(
-                      title: 'Rules',
+                      title:
+                          AppLocalizations.of(context).translate('menuCard2'),
                       image: Image.asset(
                         'assets/images/rules.png',
                         fit: BoxFit.contain,
@@ -54,7 +74,8 @@ class MenuScreen extends StatelessWidget {
                       cardShadow: 9.0,
                     ),
                     MenuCard(
-                      title: 'Contact',
+                      title:
+                          AppLocalizations.of(context).translate('menuCard3'),
                       image: Image.asset(
                         'assets/images/contact.png',
                         fit: BoxFit.contain,
@@ -65,7 +86,8 @@ class MenuScreen extends StatelessWidget {
                       cardShadow: 9.0,
                     ),
                     MenuCard(
-                      title: 'Statistics',
+                      title:
+                          AppLocalizations.of(context).translate('menuCard4'),
                       image: Image.asset(
                         'assets/images/statistics.png',
                         fit: BoxFit.contain,
@@ -76,7 +98,8 @@ class MenuScreen extends StatelessWidget {
                       cardShadow: 9.0,
                     ),
                     MenuCard(
-                      title: 'News',
+                      title:
+                          AppLocalizations.of(context).translate('menuCard5'),
                       image: Image.asset(
                         'assets/images/news.png',
                         fit: BoxFit.contain,
@@ -93,7 +116,8 @@ class MenuScreen extends StatelessWidget {
                       cardShadow: 5.0,
                     ),
                     MenuCard(
-                      title: 'Donate',
+                      title:
+                          AppLocalizations.of(context).translate('menuCard6'),
                       image: Image.asset(
                         'assets/images/donate.png',
                         fit: BoxFit.contain,
@@ -112,6 +136,28 @@ class MenuScreen extends StatelessWidget {
                   ],
                 ),
               ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Icon(
+                  FontAwesomeIcons.globeAmericas,
+                  color: Colors.cyan,
+                  size: 20,
+                ),
+                Switch(
+                  value: switchValue,
+                  onChanged: (newValue) {
+                    onSwitchValueChanged(newValue);
+                    if (newValue) {
+                      appLanguage.changeLanguage(Locale("bn"));
+                    } else {
+                      appLanguage.changeLanguage(Locale("en"));
+                    }
+                  },
+                  activeColor: Colors.cyan,
+                ),
+              ],
             ),
             GestureDetector(
               child: Center(
