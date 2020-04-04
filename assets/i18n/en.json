@@ -57,6 +57,12 @@
   "tActiveCases": "Active Cases",
   "tTotalDeaths": "Total Deaths",
   "tRecovered": "Recovered",
-  "tTodaysCases": "Today's Cases"
+  "tTodaysCases": "Today's Cases",
+
+  "nBBC": "BBC",
+  "nCNN": "CNN",
+  "nGuardian": "Guardian",
+  "nProthomAlo": "Prothom-Alo",
+  "nDailyStar": "The Daily Star"
 
 }

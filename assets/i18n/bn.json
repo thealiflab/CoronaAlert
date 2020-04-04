@@ -57,5 +57,11 @@
   "tActiveCases": "সক্রিয় ঘটনা",
   "tTotalDeaths": "মোট মৃতের সংখ্যা",
   "tRecovered": "সুস্থ হয়েছেন",
-  "tTodaysCases": "আজকের আক্রান্ত"
+  "tTodaysCases": "আজকের আক্রান্ত",
+
+  "nBBC": "বিবিসি",
+  "nCNN": "সিএনএন",
+  "nGuardian": "গার্ডিয়ান",
+  "nProthomAlo": "প্রথম আলো",
+  "nDailyStar": "দ্যা ডেইলি স্টার"
 }
