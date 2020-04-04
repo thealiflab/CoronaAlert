@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../external_links.dart';
 import 'package:coronaalert/constants.dart';
+import 'package:coronaalert/localization/app_localizations.dart';
 
 class DonateCard extends StatelessWidget {
   @override
@@ -11,17 +12,20 @@ class DonateCard extends StatelessWidget {
       children: <Widget>[
         ExternalLink(
           newsImageURL: 'assets/images/bidyanondologo.png',
-          newsPortalName: 'Bidyanondo Foundation',
+          newsPortalName:
+              "${AppLocalizations.of(context).translate('dBidyanondo')}",
           urlRedirect: kBidyanondoBkashLink,
         ),
         ExternalLink(
           newsImageURL: 'assets/images/risingyouthlogo.png',
-          newsPortalName: 'Rising Youth Council',
+          newsPortalName:
+              "${AppLocalizations.of(context).translate('dRising')}",
           urlRedirect: kRisingYouthCouncil,
         ),
         ExternalLink(
           newsImageURL: 'assets/images/ekrongalogo.png',
-          newsPortalName: 'Ek Ronga Foundation',
+          newsPortalName:
+              "${AppLocalizations.of(context).translate('dEkRonga')}",
           urlRedirect: kEkRonga,
         ),
       ],

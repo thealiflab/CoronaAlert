@@ -3,8 +3,6 @@ import '../external_links.dart';
 import 'package:coronaalert/constants.dart';
 import 'package:coronaalert/localization/app_localizations.dart';
 
-//"${AppLocalizations.of(context).translate('nGuardian')}"
-
 class NewsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

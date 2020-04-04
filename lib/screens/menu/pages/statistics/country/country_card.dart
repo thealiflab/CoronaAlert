@@ -43,7 +43,7 @@ class CountryCard extends StatelessWidget {
                 Text(
                   '$countryName',
                   style: TextStyle(
-                    fontSize: 27,
+                    fontSize: 26,
                     fontWeight: FontWeight.w600,
                   ),
                 ),

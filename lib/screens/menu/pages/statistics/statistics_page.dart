@@ -104,7 +104,7 @@ class _StatisticsPageState extends State<StatisticsPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.all(10),
+              padding: EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
