@@ -14,44 +14,46 @@ class StateCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: InkWell(
-        child: Card(
-          color: Colors.white,
-          elevation: 8.0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(10),
+      child: Material(
+        child: InkWell(
+          child: Card(
+            color: Colors.white,
+            elevation: 8.0,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(
+                Radius.circular(10),
+              ),
             ),
-          ),
-          child: Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                stateCardIcon,
-                SizedBox(
-                  height: 24.0,
-                ),
-                Text(
-                  textNumber,
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 26.0,
-                    fontWeight: FontWeight.w900,
+            child: Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  stateCardIcon,
+                  SizedBox(
+                    height: 24.0,
                   ),
-                ),
-                SizedBox(
-                  height: 8.0,
-                ),
-                Text(
-                  catagoryName,
-                  style: TextStyle(
-                    color: Colors.black45,
-                    fontSize: 15,
-                    fontWeight: FontWeight.w600,
+                  Text(
+                    textNumber,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 26.0,
+                      fontWeight: FontWeight.w900,
+                    ),
                   ),
-                ),
-              ],
+                  SizedBox(
+                    height: 8.0,
+                  ),
+                  Text(
+                    catagoryName,
+                    style: TextStyle(
+                      color: Colors.black45,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

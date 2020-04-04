@@ -42,12 +42,12 @@ class _MenuScreenState extends State<MenuScreen> {
         child: Column(
           children: <Widget>[
             MenuHeader(),
-            Expanded(
+            Flexible(
+              flex: 5,
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 30, vertical: 0),
                 child: GridView.count(
                   crossAxisCount: 2,
-                  physics: NeverScrollableScrollPhysics(),
                   children: <Widget>[
                     MenuCard(
                       title:
