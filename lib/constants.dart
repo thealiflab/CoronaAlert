@@ -1,5 +1,6 @@
 //news links
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 const kBBCLink = "https://www.bbc.com/news/coronavirus";
 const kCNNlink = "https://edition.cnn.com/";
@@ -18,6 +19,12 @@ const kMyWebSiteURL = "https://ahmedalif.com/";
 final apiURL = "https://corona.lmao.ninja/";
 
 //styling
+const kStatePageHeadingTextStyle = TextStyle(
+  fontSize: 17,
+  color: Colors.redAccent,
+  fontWeight: FontWeight.w900,
+);
+
 const kCountryCardTextStyle = TextStyle(
   fontSize: 22,
 );

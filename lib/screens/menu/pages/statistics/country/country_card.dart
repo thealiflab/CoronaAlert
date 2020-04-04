@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:coronaalert/constants.dart';
+import 'package:coronaalert/localization/app_localizations.dart';
 
 class CountryCard extends StatelessWidget {
   const CountryCard({
@@ -43,6 +44,7 @@ class CountryCard extends StatelessWidget {
                   '$countryName',
                   style: TextStyle(
                     fontSize: 27,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
                 SizedBox(
@@ -64,35 +66,35 @@ class CountryCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  '📌 Total Cases: $totalCasesOfCountry',
+                  "📌 ${AppLocalizations.of(context).translate('tTotalCases')}: $totalCasesOfCountry",
                   style: kCountryCardTextStyle,
                 ),
                 SizedBox(
                   height: 8.0,
                 ),
                 Text(
-                  '📈 Today\'s Cases: $todayCasesOfCountry',
+                  "📈 ${AppLocalizations.of(context).translate('tTodaysCases')}: $todayCasesOfCountry",
                   style: kCountryCardTextStyle,
                 ),
                 SizedBox(
                   height: 8.0,
                 ),
                 Text(
-                  '🔔 Active Cases: $activeCasesOfCountry',
+                  "🔔 ${AppLocalizations.of(context).translate('tActiveCases')}: $activeCasesOfCountry",
                   style: kCountryCardTextStyle,
                 ),
                 SizedBox(
                   height: 8.0,
                 ),
                 Text(
-                  '💀 Deaths: $deaths',
+                  "💀 ${AppLocalizations.of(context).translate('tTotalDeaths')}: $deaths",
                   style: kCountryCardTextStyle,
                 ),
                 SizedBox(
                   height: 8.0,
                 ),
                 Text(
-                  '✔ Recovered: $recoveredOfCountry',
+                  "✔ ${AppLocalizations.of(context).translate('tRecovered')}: $recoveredOfCountry",
                   style: kCountryCardTextStyle,
                 ),
               ],

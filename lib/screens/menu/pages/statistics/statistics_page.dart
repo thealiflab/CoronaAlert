@@ -8,6 +8,7 @@ import 'dart:async';
 import 'country/countries_page.dart';
 import 'package:coronaalert/constants.dart';
 import 'country/country_card.dart';
+import 'package:coronaalert/localization/app_localizations.dart';
 
 bool showSpinner = false;
 
@@ -94,7 +95,8 @@ class _StatisticsPageState extends State<StatisticsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Corona Statistics"),
+        title: Text(
+            "${AppLocalizations.of(context).translate('tStatisticsPageTitle')}"),
         centerTitle: true,
       ),
       body: SafeArea(
@@ -102,19 +104,15 @@ class _StatisticsPageState extends State<StatisticsPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.all(20),
+              padding: EdgeInsets.all(10),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   Center(
                     child: Text(
-                      'World Wide',
-                      style: TextStyle(
-                        fontSize: 17,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w900,
-                      ),
+                      "${AppLocalizations.of(context).translate('tHeadingWorld')}",
+                      style: kStatePageHeadingTextStyle,
                     ),
                   ),
                   SizedBox(
@@ -130,7 +128,8 @@ class _StatisticsPageState extends State<StatisticsPage> {
                           color: Colors.blueAccent,
                         ),
                         textNumber: totalCases.toString(),
-                        catagoryName: 'Total Cases',
+                        catagoryName:
+                            "${AppLocalizations.of(context).translate('tTotalCases')}",
                       ),
                       SizedBox(
                         width: 16.0,
@@ -142,7 +141,8 @@ class _StatisticsPageState extends State<StatisticsPage> {
                           color: Colors.orangeAccent,
                         ),
                         textNumber: active.toString(),
-                        catagoryName: 'Active Cases',
+                        catagoryName:
+                            "${AppLocalizations.of(context).translate('tActiveCases')}",
                       ),
                     ],
                   ),
@@ -159,7 +159,8 @@ class _StatisticsPageState extends State<StatisticsPage> {
                           color: Colors.redAccent,
                         ),
                         textNumber: deaths.toString(),
-                        catagoryName: 'Total Deaths',
+                        catagoryName:
+                            "${AppLocalizations.of(context).translate('tTotalDeaths')}",
                       ),
                       SizedBox(
                         width: 16.0,
@@ -171,7 +172,8 @@ class _StatisticsPageState extends State<StatisticsPage> {
                           color: Colors.green,
                         ),
                         textNumber: recovered.toString(),
-                        catagoryName: 'Recovered',
+                        catagoryName:
+                            "${AppLocalizations.of(context).translate('tRecovered')}",
                       ),
                     ],
                   ),
@@ -180,12 +182,8 @@ class _StatisticsPageState extends State<StatisticsPage> {
                   ),
                   Center(
                     child: Text(
-                      'Your Country\'s Statistics',
-                      style: TextStyle(
-                        fontSize: 17,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w900,
-                      ),
+                      "${AppLocalizations.of(context).translate('tHeadingCountry')}",
+                      style: kStatePageHeadingTextStyle,
                     ),
                   ),
                   SizedBox(
@@ -206,7 +204,7 @@ class _StatisticsPageState extends State<StatisticsPage> {
                   GestureDetector(
                     child: Center(
                       child: Text(
-                        'See More Countries',
+                        "${AppLocalizations.of(context).translate('tSeeMore')}",
                         style: TextStyle(
                           fontSize: 16,
                           color: Colors.blue,
