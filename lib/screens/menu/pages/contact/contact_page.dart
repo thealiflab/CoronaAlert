@@ -1,5 +1,6 @@
 import 'package:coronaalert/screens/menu/pages/contact/contact_card.dart';
 import 'package:flutter/material.dart';
+import 'package:coronaalert/localization/app_localizations.dart';
 
 class ContactPage extends StatelessWidget {
   static const id = '/contact_page';
@@ -9,8 +10,9 @@ class ContactPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Contact',
+          "${AppLocalizations.of(context).translate('cTitle')}",
         ),
+        centerTitle: true,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -25,15 +27,14 @@ class ContactPage extends StatelessWidget {
                   children: <Widget>[
                     Image.asset(
                       'assets/images/contactdoctor.png',
-                      height: 150,
+                      height: 110,
                       fit: BoxFit.contain,
-                      //MediaQuery.of(context).size.width / 2
                     ),
                     SizedBox(
-                      height: 10,
+                      height: 15,
                     ),
                     Text(
-                      'Contact List',
+                      "${AppLocalizations.of(context).translate('cHot')}",
                       style: TextStyle(
                         fontSize: 35,
                         fontWeight: FontWeight.w600,
@@ -45,59 +46,67 @@ class ContactPage extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
-            height: 20.0,
-          ),
           Expanded(
             child: ListView(
               padding: EdgeInsets.only(top: 20, bottom: 20),
               children: <Widget>[
                 ContactCard(
-                  title: 'Emergency',
-                  phoneNumber: '999',
+                  title:
+                      "${AppLocalizations.of(context).translate('cEmergency')}",
+                  phoneNumber: '333',
                 ),
                 ContactCard(
-                  title: 'IEDCR -1',
+                  title:
+                      "${AppLocalizations.of(context).translate('cEmergency')}",
+                  phoneNumber: '10655',
+                ),
+                ContactCard(
+                  title:
+                      "${AppLocalizations.of(context).translate('cEmergency')}",
+                  phoneNumber: '16263',
+                ),
+                ContactCard(
+                  title: "${AppLocalizations.of(context).translate('cIEDCR')}",
                   phoneNumber: '01550064901',
                 ),
                 ContactCard(
-                  title: 'IEDCR - 2',
+                  title: "${AppLocalizations.of(context).translate('cIEDCR')}",
                   phoneNumber: '01550064905',
                 ),
                 ContactCard(
-                  title: 'IEDCR - 3',
+                  title: "${AppLocalizations.of(context).translate('cIEDCR')}",
                   phoneNumber: '01401184551',
                 ),
                 ContactCard(
-                  title: 'IEDCR - 4',
+                  title: "${AppLocalizations.of(context).translate('cIEDCR')}",
                   phoneNumber: '01401184554',
                 ),
                 ContactCard(
-                  title: 'IEDCR - 5',
+                  title: "${AppLocalizations.of(context).translate('cIEDCR')}",
                   phoneNumber: '01401184559',
                 ),
                 ContactCard(
-                  title: 'IEDCR - 6',
+                  title: "${AppLocalizations.of(context).translate('cIEDCR')}",
                   phoneNumber: '01401184560',
                 ),
                 ContactCard(
-                  title: 'IEDCR - 7',
+                  title: "${AppLocalizations.of(context).translate('cIEDCR')}",
                   phoneNumber: '01401184563',
                 ),
                 ContactCard(
-                  title: 'IEDCR - 8',
+                  title: "${AppLocalizations.of(context).translate('cIEDCR')}",
                   phoneNumber: '01401184568',
                 ),
                 ContactCard(
-                  title: 'IEDCR - 9',
+                  title: "${AppLocalizations.of(context).translate('cIEDCR')}",
                   phoneNumber: '01927711784',
                 ),
                 ContactCard(
-                  title: 'IEDCR - 10',
+                  title: "${AppLocalizations.of(context).translate('cIEDCR')}",
                   phoneNumber: '01937000011',
                 ),
                 ContactCard(
-                  title: 'IEDCR - 11',
+                  title: "${AppLocalizations.of(context).translate('cIEDCR')}",
                   phoneNumber: '01937110011',
                 ),
                 SizedBox(
