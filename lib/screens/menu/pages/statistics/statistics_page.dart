@@ -109,112 +109,130 @@ class _StatisticsPageState extends State<StatisticsPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Center(
-                    child: Text(
-                      "${AppLocalizations.of(context).translate('tHeadingWorld')}",
-                      style: kStatePageHeadingTextStyle,
+                  Expanded(
+                    flex: 0,
+                    child: Center(
+                      child: Text(
+                        "${AppLocalizations.of(context).translate('tHeadingWorld')}",
+                        style: kStatePageHeadingTextStyle,
+                      ),
                     ),
                   ),
                   SizedBox(
                     height: 10,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: <Widget>[
-                      StateCard(
-                        stateCardIcon: Icon(
-                          FontAwesomeIcons.globeAmericas,
-                          size: 30.0,
-                          color: Colors.blueAccent,
+                  Expanded(
+                    flex: 0,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: <Widget>[
+                        StateCard(
+                          stateCardIcon: Icon(
+                            FontAwesomeIcons.globeAmericas,
+                            size: 30.0,
+                            color: Colors.blueAccent,
+                          ),
+                          textNumber: totalCases.toString(),
+                          catagoryName:
+                              "${AppLocalizations.of(context).translate('tTotalCases')}",
                         ),
-                        textNumber: totalCases.toString(),
-                        catagoryName:
-                            "${AppLocalizations.of(context).translate('tTotalCases')}",
-                      ),
-                      SizedBox(
-                        width: 16.0,
-                      ),
-                      StateCard(
-                        stateCardIcon: Icon(
-                          FontAwesomeIcons.flagCheckered,
-                          size: 30.0,
-                          color: Colors.orangeAccent,
+                        SizedBox(
+                          width: 16.0,
                         ),
-                        textNumber: active.toString(),
-                        catagoryName:
-                            "${AppLocalizations.of(context).translate('tActiveCases')}",
-                      ),
-                    ],
+                        StateCard(
+                          stateCardIcon: Icon(
+                            FontAwesomeIcons.flagCheckered,
+                            size: 30.0,
+                            color: Colors.orangeAccent,
+                          ),
+                          textNumber: active.toString(),
+                          catagoryName:
+                              "${AppLocalizations.of(context).translate('tActiveCases')}",
+                        ),
+                      ],
+                    ),
                   ),
                   SizedBox(
                     height: 16.0,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: <Widget>[
-                      StateCard(
-                        stateCardIcon: Icon(
-                          FontAwesomeIcons.skullCrossbones,
-                          size: 30.0,
-                          color: Colors.redAccent,
+                  Expanded(
+                    flex: 0,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: <Widget>[
+                        StateCard(
+                          stateCardIcon: Icon(
+                            FontAwesomeIcons.skullCrossbones,
+                            size: 30.0,
+                            color: Colors.redAccent,
+                          ),
+                          textNumber: deaths.toString(),
+                          catagoryName:
+                              "${AppLocalizations.of(context).translate('tTotalDeaths')}",
                         ),
-                        textNumber: deaths.toString(),
-                        catagoryName:
-                            "${AppLocalizations.of(context).translate('tTotalDeaths')}",
-                      ),
-                      SizedBox(
-                        width: 16.0,
-                      ),
-                      StateCard(
-                        stateCardIcon: Icon(
-                          FontAwesomeIcons.solidCheckCircle,
-                          size: 30.0,
-                          color: Colors.green,
+                        SizedBox(
+                          width: 16.0,
                         ),
-                        textNumber: recovered.toString(),
-                        catagoryName:
-                            "${AppLocalizations.of(context).translate('tRecovered')}",
-                      ),
-                    ],
+                        StateCard(
+                          stateCardIcon: Icon(
+                            FontAwesomeIcons.solidCheckCircle,
+                            size: 30.0,
+                            color: Colors.green,
+                          ),
+                          textNumber: recovered.toString(),
+                          catagoryName:
+                              "${AppLocalizations.of(context).translate('tRecovered')}",
+                        ),
+                      ],
+                    ),
                   ),
                   SizedBox(
                     height: 20,
                   ),
-                  Center(
-                    child: Text(
-                      "${AppLocalizations.of(context).translate('tHeadingCountry')}",
-                      style: kStatePageHeadingTextStyle,
+                  Expanded(
+                    flex: 0,
+                    child: Center(
+                      child: Text(
+                        "${AppLocalizations.of(context).translate('tHeadingCountry')}",
+                        style: kStatePageHeadingTextStyle,
+                      ),
                     ),
                   ),
                   SizedBox(
                     height: 10,
                   ),
-                  CountryCard(
-                    countryName: countryName,
-                    countryFlag: countryFlag,
-                    totalCasesOfCountry: totalCasesOfCountry,
-                    todayCasesOfCountry: todayCasesOfCountry,
-                    activeCasesOfCountry: activeCasesOfCountry,
-                    deaths: deathsOfCountry,
-                    recoveredOfCountry: recoveredOfCountry,
+                  Expanded(
+                    flex: 0,
+                    child: CountryCard(
+                      countryName: countryName,
+                      countryFlag: countryFlag,
+                      totalCasesOfCountry: totalCasesOfCountry,
+                      todayCasesOfCountry: todayCasesOfCountry,
+                      activeCasesOfCountry: activeCasesOfCountry,
+                      deaths: deathsOfCountry,
+                      recoveredOfCountry: recoveredOfCountry,
+                    ),
                   ),
                   SizedBox(
                     height: 15,
                   ),
-                  GestureDetector(
-                    child: Center(
-                      child: Text(
-                        "${AppLocalizations.of(context).translate('tSeeMore')}",
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.blue,
-                          decoration: TextDecoration.underline,
+                  Expanded(
+                    flex: 0,
+                    child: GestureDetector(
+                      child: Center(
+                        child: Text(
+                          "${AppLocalizations.of(context).translate('tSeeMore')}",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.blue,
+                            decoration: TextDecoration.underline,
+                          ),
                         ),
                       ),
+                      onTap: () {
+                        Navigator.of(context).pushNamed(CountriesPage.id);
+                      },
                     ),
-                    onTap: () {
-                      Navigator.of(context).pushNamed(CountriesPage.id);
-                    },
                   ),
                 ],
               ),
