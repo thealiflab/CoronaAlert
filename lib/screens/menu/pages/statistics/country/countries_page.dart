@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:coronaalert/constants.dart';
 import 'country_card.dart';
+import 'package:coronaalert/localization/app_localizations.dart';
 
 class CountriesPage extends StatefulWidget {
   static const id = '/countries_page';
@@ -67,7 +68,7 @@ class _CountriesPageState extends State<CountriesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Infected Countries'),
+        title: Text("${AppLocalizations.of(context).translate('tInfected')}"),
         centerTitle: true,
       ),
       body: Container(
