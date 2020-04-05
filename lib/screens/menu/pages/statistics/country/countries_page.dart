@@ -78,6 +78,8 @@ class _CountriesPageState extends State<CountriesPage> {
               return ListView.builder(
                   padding: EdgeInsets.all(12),
                   itemCount: snapshot.data.length,
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
                   itemBuilder: (BuildContext context, int index) {
                     //_countryName(snapshot.data[index]),
                     return CountryCard(

@@ -99,22 +99,22 @@ class _StatisticsPageState extends State<StatisticsPage> {
             "${AppLocalizations.of(context).translate('tStatisticsPageTitle')}"),
         centerTitle: true,
       ),
-      body: SafeArea(
-        child: Container(
-          color: Colors.white,
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: IntrinsicHeight(
           child: Padding(
-            padding: EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
+            padding: EdgeInsets.all(12.0),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-                Flexible(
-                  flex: 1,
-                  child: Center(
-                    child: Text(
-                      "${AppLocalizations.of(context).translate('tHeadingWorld')}",
-                      style: kStatePageHeadingTextStyle,
-                    ),
+                Center(
+                  child: Text(
+                    "${AppLocalizations.of(context).translate('tHeadingWorld')}",
+                    style: kStatePageHeadingTextStyle,
                   ),
+                ),
+                SizedBox(
+                  height: 12.0,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -172,44 +172,45 @@ class _StatisticsPageState extends State<StatisticsPage> {
                     ),
                   ],
                 ),
-                Flexible(
-                  flex: 1,
+                SizedBox(
+                  height: 20.0,
+                ),
+                Center(
+                  child: Text(
+                    "${AppLocalizations.of(context).translate('tHeadingCountry')}",
+                    style: kStatePageHeadingTextStyle,
+                  ),
+                ),
+                SizedBox(
+                  height: 12.0,
+                ),
+                CountryCard(
+                  countryName: countryName,
+                  countryFlag: countryFlag,
+                  totalCasesOfCountry: totalCasesOfCountry,
+                  todayCasesOfCountry: todayCasesOfCountry,
+                  activeCasesOfCountry: activeCasesOfCountry,
+                  deaths: deathsOfCountry,
+                  recoveredOfCountry: recoveredOfCountry,
+                ),
+                SizedBox(
+                  height: 15.0,
+                ),
+                GestureDetector(
                   child: Center(
                     child: Text(
-                      "${AppLocalizations.of(context).translate('tHeadingCountry')}",
-                      style: kStatePageHeadingTextStyle,
-                    ),
-                  ),
-                ),
-                Flexible(
-                  flex: 3,
-                  child: CountryCard(
-                    countryName: countryName,
-                    countryFlag: countryFlag,
-                    totalCasesOfCountry: totalCasesOfCountry,
-                    todayCasesOfCountry: todayCasesOfCountry,
-                    activeCasesOfCountry: activeCasesOfCountry,
-                    deaths: deathsOfCountry,
-                    recoveredOfCountry: recoveredOfCountry,
-                  ),
-                ),
-                Flexible(
-                  flex: 1,
-                  child: GestureDetector(
-                    child: Center(
-                      child: Text(
-                        "${AppLocalizations.of(context).translate('tSeeMore')}",
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.blue,
-                          decoration: TextDecoration.underline,
-                        ),
+                      "${AppLocalizations.of(context).translate('tSeeMore')}",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.blue,
+                        decoration: TextDecoration.underline,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                    onTap: () {
-                      Navigator.of(context).pushNamed(CountriesPage.id);
-                    },
                   ),
+                  onTap: () {
+                    Navigator.of(context).pushNamed(CountriesPage.id);
+                  },
                 ),
               ],
             ),

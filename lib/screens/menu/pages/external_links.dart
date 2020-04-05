@@ -23,7 +23,7 @@ class ExternalLink extends StatelessWidget {
       onTap: () => _gotoWeb(urlRedirect),
       child: Padding(
         padding: const EdgeInsets.symmetric(
-          horizontal: 30,
+          horizontal: 35,
           vertical: 7,
         ),
         child: Row(
@@ -36,12 +36,12 @@ class ExternalLink extends StatelessWidget {
               width: 40,
             ),
             SizedBox(
-              width: 10,
+              width: 7,
             ),
             Text(
               newsPortalName,
               style: TextStyle(
-                fontSize: 15,
+                fontSize: 12,
                 fontWeight: FontWeight.w600,
               ),
             ),
