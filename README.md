@@ -10,39 +10,39 @@ Corona Alert is a COVID-19 testing and awareness app that gives you the results 
 
 # Screenshots
 
-![one](https://github.com/thealiflab/CoronaAlert/blob/master/ReadmePhotos/one.png "")
+![one](https://github.com/thealiflab/CoronaAlert/blob/master/ReadmePhotos/one1.png "")
 
 
 ![two](https://github.com/thealiflab/CoronaAlert/blob/master/ReadmePhotos/two.png "")
 
 
-![three](https://github.com/thealiflab/CoronaAlert/blob/master/ReadmePhotos/three.png "")
+![three](https://github.com/thealiflab/CoronaAlert/blob/master/ReadmePhotos/three3.png "")
 
 
-![four](https://github.com/thealiflab/CoronaAlert/blob/master/ReadmePhotos/four.png "")
+![four](https://github.com/thealiflab/CoronaAlert/blob/master/ReadmePhotos/four4.png "")
 
 
-![five](https://github.com/thealiflab/CoronaAlert/blob/master/ReadmePhotos/five.png "")
+![five](https://github.com/thealiflab/CoronaAlert/blob/master/ReadmePhotos/five5.png "")
 
 
-![six](https://github.com/thealiflab/CoronaAlert/blob/master/ReadmePhotos/six.png "")
+![six](https://github.com/thealiflab/CoronaAlert/blob/master/ReadmePhotos/six6.png "")
 
 
 # Features
 
-⋅⋅* Virtual Covid-19 Test based on your symptoms
+* Virtual Covid-19 Test based on your symptoms
 
-⋅⋅* Give real-time data of your country about recent cases of the virus.
+* Give real-time data of your country about recent cases of the virus.
 
-⋅⋅* Show real-time statistics of all countries which are infected by coronavirus
+* Show real-time statistics of all countries which are infected by coronavirus
 
-⋅⋅* Emergency Contact option
+* Emergency Contact option
 
-⋅⋅* Awareness rules
+* Awareness rules
 
-⋅⋅* Donate through app
+* Donate through app
 
-⋅⋅* Get important news
+* Get important news
 
-⋅⋅* Only require Network permission (Like Wi-Fi, mobile data)
+* Only require Network permission (Like Wi-Fi, mobile data)
 
