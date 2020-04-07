@@ -30,7 +30,7 @@ Corona Alert is a COVID-19 testing and awareness app that gives you the results 
 
 # Features
 
-* Virtual Covid-19 Test based on your symptoms
+* Virtual COVID-19 Test based on your symptoms
 
 * Give real-time data of your country about recent cases of the virus.
 
