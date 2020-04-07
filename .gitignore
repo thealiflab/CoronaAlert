@@ -38,4 +38,4 @@ lib/generated_plugin_registrant.dart
 
 # Ignoring key files
 android/key.properties
-.jks
+android/app/coronaalert.jks
