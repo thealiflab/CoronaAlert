@@ -1,16 +1,6 @@
 # Corona Alert
 
-Corona Virus Awareness App
+####Corona Virus Awareness App
+Corona Alert is a COVID-19 testing and awareness app that gives you the results based on your symptoms and your country statistics. It also provides recent statistics about the cases of COVID-19 of your country as well as all other countries.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Corona Alert Logo](https://github.com/thealiflab/CoronaAlert/ReadmePhotos/ca1024x500.png "")
