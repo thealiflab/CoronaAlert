@@ -17,10 +17,15 @@ class DonateCard extends StatelessWidget {
           urlRedirect: kBidyanondoBkashLink,
         ),
         ExternalLink(
-          newsImageURL: 'assets/images/risingyouthlogo.png',
+          newsImageURL: 'assets/images/jaagologo.png',
+          newsPortalName: "${AppLocalizations.of(context).translate('dJaago')}",
+          urlRedirect: kJaagoFoundation,
+        ),
+        ExternalLink(
+          newsImageURL: 'assets/images/sajidalogo.png',
           newsPortalName:
-              "${AppLocalizations.of(context).translate('dRising')}",
-          urlRedirect: kRisingYouthCouncil,
+              "${AppLocalizations.of(context).translate('dSajida')}",
+          urlRedirect: kSajidaFoundation,
         ),
         ExternalLink(
           newsImageURL: 'assets/images/ekrongalogo.png',

@@ -11,7 +11,8 @@ const kDSLink = "https://www.thedailystar.net/coronavirus-deadly-new-threat";
 //donate links
 const kBidyanondoBkashLink =
     "https://www.bkash.com/bkash-donation/donation?page=bidyanondo";
-const kRisingYouthCouncil = "https://www.facebook.com/RisingYouthCouncil";
+const kJaagoFoundation = "https://donate.jaago.com.bd/coronarelieffund/";
+const kSajidaFoundation = "https://www.sajidafoundation.org/donate-now/";
 const kEkRonga = "http://ekrongaekghuri.com/";
 
 //many more links
