@@ -7,6 +7,7 @@ const kCNNlink = "https://edition.cnn.com/";
 const kGuardianLink = "https://www.theguardian.com/world/coronavirus-outbreak";
 const kProthomAloLink = "https://en.prothomalo.com/topic/coronavirus";
 const kDSLink = "https://www.thedailystar.net/coronavirus-deadly-new-threat";
+const kWHOBD = "https://www.who.int/bangladesh";
 
 //donate links
 const kBidyanondoBkashLink =

@@ -41,7 +41,7 @@ class NewsCard extends StatelessWidget {
         ExternalLink(
           newsImageURL: 'assets/images/whologo.png',
           newsPortalName: "${AppLocalizations.of(context).translate('nWHO')}",
-          urlRedirect: kDSLink,
+          urlRedirect: kWHOBD,
         ),
       ],
     );
