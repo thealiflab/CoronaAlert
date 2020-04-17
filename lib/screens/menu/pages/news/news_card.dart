@@ -38,6 +38,11 @@ class NewsCard extends StatelessWidget {
               "${AppLocalizations.of(context).translate('nDailyStar')}",
           urlRedirect: kDSLink,
         ),
+        ExternalLink(
+          newsImageURL: 'assets/images/whologo.png',
+          newsPortalName: "${AppLocalizations.of(context).translate('nWHO')}",
+          urlRedirect: kDSLink,
+        ),
       ],
     );
   }

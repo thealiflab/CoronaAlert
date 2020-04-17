@@ -17,7 +17,7 @@ const kEkRonga = "http://ekrongaekghuri.com/";
 
 //many more links
 const kMyWebSiteURL = "https://ahmedalif.com/";
-final apiURL = "https://corona.lmao.ninja/";
+final apiURL = "https://corona.lmao.ninja/v2/";
 
 //styling
 const kStatePageHeadingTextStyle = TextStyle(
