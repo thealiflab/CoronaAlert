@@ -3,7 +3,7 @@
 Corona Virus Awareness App
 
 
-Corona Alert is a COVID-19 testing and awareness app that gives you the results based on your symptoms and your country statistics. It also provides recent statistics about the cases of COVID-19 of your country as well as all other countries.
+Corona Alert is a COVID-19 examine and awareness app that gives you the results based on your symptoms. It also provides recent statistics about the cases of COVID-19 of your country as well as all other countries.
 
 ![Corona Alert Logo](https://github.com/thealiflab/CoronaAlert/blob/master/ReadmePhotos/ca512x512.png "")
 
