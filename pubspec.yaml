@@ -28,7 +28,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   fancy_on_boarding: ^1.5.0
   url_launcher: ^5.4.2
-  rflutter_alert: ^1.0.3
+  rflutter_alert: any
   font_awesome_flutter: ^8.8.1
   http: ^0.12.0+4
   provider: ^4.0.4
