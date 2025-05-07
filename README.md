@@ -10,6 +10,9 @@ Corona Alert is a COVID-19 examination and awareness app that gives you the resu
 # Recognition
 [AIUB Innovative Projects: Corona Alert](https://www.aiub.edu/corona-alert)
 
+# Demo Video
+[Youtube](https://www.youtube.com/watch?v=rTyCu52qx-Y)
+
 # Screenshots
 
 ![one](https://github.com/thealiflab/CoronaAlert/blob/master/ReadmePhotos/one1.png "")
